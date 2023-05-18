@@ -51,7 +51,7 @@ const Carts = () => {
                   <div  className="d-flex justify-content-between w-75 gap-4">
                     <button onClick={()=> handleIncrease(singleCartItem)} className="btn btn-primary w-75">increase</button>
                     <button onClick={()=> handleDecrease(singleCartItem)} className="btn btn-primary w-75">decrease</button>
-                    <button onClick={()=>setCartItem([])} className="btn btn-primary w-75" >{cartItem.length === 1 ? 'clear item' : 'clear all'}</button>
+                    
                   </div>
                 </div>
               </div>
