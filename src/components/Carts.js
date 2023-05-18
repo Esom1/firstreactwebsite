@@ -3,24 +3,10 @@ import "../styles/Carts.css";
 import CartContext from "../hooks/CartContext";
 
 const Carts = () => {
-  const { cartItem,setCartItem } = useContext(CartContext);
-  function handleIncrease(product){
-    const productSelected = cartItem.find((singleCartItem)=>singleCartItem.id === product.id)
-    if(productSelected){
-      setCartItem(cartItem.map((oneItem)=> oneItem.id === product.id ? {...productSelected, quantity:productSelected.quantity + 1} : oneItem))
-    }
-  }
+  const { cartItem, setCartItem, handleIncrease, handleDecrease, totalPrice } =
+    useContext(CartContext);
+ 
 
-  function handleDecrease (product) {
-    const productSelected = cartItem.find(
-      (singleCartItem)=> singleCartItem.id === product.id
-    )
-    if(productSelected.quantity === 1) {
-      setCartItem(cartItem.filter((oneItem)=>oneItem.id !== product.id ))
-    }else{
-      setCartItem(cartItem.map((dd)=> dd.id === product.id ? {... productSelected,quantity:productSelected.quantity - 1} : dd))
-    }
-  }
   return (
     <div className="container">
       <div>
@@ -32,7 +18,8 @@ const Carts = () => {
       </div>
       <div>
         {cartItem.map((singleCartItem) => {
-          const { image, id, title, price, quantity, description } = singleCartItem;
+          const { image, id, title, price, quantity, description } =
+            singleCartItem;
           return (
             <div
               key={id}
@@ -48,10 +35,19 @@ const Carts = () => {
                   <h4>
                     {quantity} * {price}{" "}
                   </h4>
-                  <div  className="d-flex justify-content-between w-75 gap-4">
-                    <button onClick={()=> handleIncrease(singleCartItem)} className="btn btn-primary w-75">increase</button>
-                    <button onClick={()=> handleDecrease(singleCartItem)} className="btn btn-primary w-75">decrease</button>
-                    
+                  <div className="d-flex justify-content-between w-75 gap-4">
+                    <button
+                      onClick={() => handleIncrease(singleCartItem)}
+                      className="btn btn-primary w-75"
+                    >
+                      increase
+                    </button>
+                    <button
+                      onClick={() => handleDecrease(singleCartItem)}
+                      className="btn btn-primary w-75"
+                    >
+                      decrease
+                    </button>
                   </div>
                 </div>
               </div>
@@ -59,10 +55,21 @@ const Carts = () => {
           );
         })}
         {cartItem.length >= 1 && (
-          <div>
-            <button onClick={()=>setCartItem([])} className="btn btn-primary w-40" >{cartItem.length === 1 ? 'clear item' : 'clear all'}</button>
+          <div className="text-center">
+            <button
+              onClick={() => setCartItem([])}
+              className="btn btn-primary w-40"
+            >
+              {cartItem.length === 1 ? "clear item" : "clear all"}
+            </button>
           </div>
         )}
+        <div>
+          <h1 className="">Total Price</h1>
+          <div>
+            <h2>${totalPrice}</h2>
+          </div>
+        </div>
       </div>
     </div>
   );

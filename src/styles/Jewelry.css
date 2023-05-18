@@ -1,0 +1,15 @@
+.component-title-jewelry{
+  background-color: #94004f;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 5rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.j-pic{
+  display: flex;
+  gap: 2rem;
+}
