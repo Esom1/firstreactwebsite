@@ -58,16 +58,17 @@ const Carts = () => {
           <div className="text-center">
             <button
               onClick={() => setCartItem([])}
-              className="btn btn-primary w-40"
+              className="btn btn-primary w-50 mt-5 bg-danger border-none"
             >
               {cartItem.length === 1 ? "clear item" : "clear all"}
             </button>
           </div>
         )}
-        <div>
-          <h1 className="">Total Price</h1>
+        <div className="container  text-center ">
+          <hr className="thicker" />
+          <h2 >Total Price</h2>
           <div>
-            <h2>${totalPrice}</h2>
+            <h3>${totalPrice}</h3>
           </div>
         </div>
       </div>
