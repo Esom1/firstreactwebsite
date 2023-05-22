@@ -16,7 +16,7 @@ const Electronics = () => {
      })
    }
    return (
-     <div className='container'>
+     <div className='container '>
       <h2> {Loading && <ClipLoader />} </h2>
       <div className='component-title-electronics'>
        <h2 className='text-center mt-4'>ELECTRONICS CATEGORY</h2>

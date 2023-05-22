@@ -30,7 +30,7 @@ const Carts = () => {
               </div>
               <div className="col-md-6">
                 <h2 className="text-danger"> {title}</h2>
-                <h4 className="text-success lh-base"> {description} </h4>
+                <h4 className="text-success lh-base "> {description} </h4>
                 <div>
                   <h4>
                     {quantity} * {price}{" "}

@@ -11,12 +11,18 @@
 }
 .j-pic{
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(2,1fr);
   gap: 3rem;
+  /* overflow-x: scroll; */
 }
+/* .j-pic2{
+  width: 50%;
+  height: 100%;
+} */
 .j-pic img{
   /* margin: auto; */
-  /* height: 150px; */
-  width: 50%;
+  height: 70px;
+  /* width: 80px; */
 }
 

@@ -23,13 +23,14 @@ const Jewelry = () => {
      <div className='component-title-jewelry'>
       <h2 className='text-center mt-4'>JEWELRY CATEGORY</h2>
      </div>
-     <div className='j-pic '>
+   <div className='j-pic2'>
+   <div className='j-pic'>
       {data.map((datumJewelry)=>{
         const { id,image,price,title} = datumJewelry
         return(
           <div key={id} className='component-data-inner-jewelry h-100 p-1 text-center card-inner shadow-sm border border-3 rounded mt-5'>
              <Link className="text-decoration-none" to ={`/SingleProduct/${id}`}>
-                  <img className=" img-fluid w-25 mt-5" src={image} alt={title} />
+                  <img className=" img-fluid w-25" src={image} alt={title} />
                   <p className="fw-bold mt-3">${price} </p>
                   </Link>
                   <button onClick={()=> {handleAddToCart(datumJewelry); notify()}} className="btn text-white btn-primary">add to cart</button>
@@ -38,6 +39,7 @@ const Jewelry = () => {
         )
       })}
      </div>
+   </div>
     </div>
   )
 }
