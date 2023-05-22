@@ -1,10 +1,12 @@
 import React from 'react';
 import { dataFooter } from '../FooterDb'
+import '../styles/Footer.css'
 
 const Footer = () => {
+  const copyRightYear = new Date().getFullYear()
   return (
-    <div className='footrer mt-5 bg-dark text-white'>
-      <div className='container d-flex justify-content-between align-items-center p-4'>
+    <div className='footer mt-5 bg-dark text-white'>
+      <div className='container d-lg-flex justify-content-between align-items-center p-4'>
         {dataFooter.map((datumFooter)=>{
           const { id,title,contact,about,careers,blog } = datumFooter
           return(
@@ -19,8 +21,9 @@ const Footer = () => {
             </div>
           )
         })}
-        <p>Copyright @&</p>
+       
       </div>
+      <p className='text-center fw-bold'> &copy; {copyRightYear} christy</p>
     </div>
   )
 }

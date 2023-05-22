@@ -12,8 +12,8 @@
 .j-pic{
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(2,1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(4,auto);
+  gap: 2rem;
   /* overflow-x: scroll; */
 }
 /* .j-pic2{
@@ -26,3 +26,8 @@
   /* width: 80px; */
 }
 
+@media screen and (max-width: 768px) {
+  .j-pic {
+    grid-template-columns: 1fr 1fr;
+  }
+}
